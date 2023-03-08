@@ -101,9 +101,7 @@ def register():
 def registerfirst():
     return render_template("register0.html")
 
-@app.route('/login')
-def login():
-    return render_template("login.html")
+
 
 
 
