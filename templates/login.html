@@ -62,7 +62,14 @@
                             LOG IN
                         </span>
                     </div>
-                    <form method="post" name="contact-us" action="">
+                     {% with messages = get_flashed_messages() %}
+         {% if messages %}
+          {% for message in messages %}
+            <p>{{ message }}</p>
+           {% endfor %}
+         {% endif %}
+       {% endwith %}
+                    <form method="post" name="contact-us" action="{{ url_for('login') }}">
                         <div class="row">
 
 <!--                            <div class="col-md-12 form-group">-->
@@ -135,7 +142,7 @@
          <div class="row">
          	<div class="col-lg-4">
          		<div class="footer-widget pr-lg-5 pr-0">
-         			<img src=" ../static/img/logo.png" class="img-fluid footer-logo mb-3" alt="">
+         			<img style="width:300px; height:200px;"  src=" ../static/img/2.png" class="img-fluid footer-logo mb-3" alt="">
 	         		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et obcaecati quisquam id sit omnis explicabo voluptate aut placeat, soluta, nisi ea magni facere, itaque incidunt modi? Magni, et voluptatum dolorem.</p>
 	         		<nav class="nav nav-mastfoot justify-content-start">
 		                <a class="nav-link" href="#">
