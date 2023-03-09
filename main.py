@@ -90,9 +90,11 @@ def register():
             password=hash_and_salted_password
 
         )
+
         db.session.add(new_user)
         db.session.commit()
-        return "done"
+        name=request.form.get("Username")
+        return  render_template("welcome .html",name=name)
 
     return render_template("register0.html")
 
@@ -101,9 +103,7 @@ def register():
 def registerfirst():
     return render_template("register0.html")
 
-@app.route('/login')
-def login():
-    return render_template("login.html")
+
 
 
 
