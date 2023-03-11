@@ -97,7 +97,13 @@ def register():
         return  render_template("welcome .html",name=name)
 
     return render_template("register0.html")
+@app.route('/g', methods=["GET", "POST"])
+def g():
+    if request.method == "POST":
+        n=request.form.get("fname")
+        return f"{n}"
 
+    return render_template("gatheringinfos.html")
 
 @app.route('/register/1', methods=["GET", "POST"])
 def registerfirst():
